@@ -2,11 +2,11 @@
     "x":0,
     "type":"Dialog",
     "selectedBox":2,
-    "selecteID":4,
+    "selecteID":16,
     "searchKey":"Dialog,Sign",
     "props":{"width":640,"var":"Sign","sceneColor":"#000000","runtime":"script/SignUI.ts","height":1136},
     "nodeParent":-1,
-    "maxID":5,
+    "maxID":17,
     "label":"Sign",
     "isOpen":true,
     "isDirectory":true,
@@ -32,13 +32,125 @@
             "x":15,
             "type":"Sprite",
             "searchKey":"Sprite,no1",
-            "props":{"y":398,"x":178,"width":58,"var":"no1","texture":"main/no1.png","height":98},
+            "props":{"y":434,"x":189,"width":58,"var":"no1","texture":"main/no1.png","height":98},
             "nodeParent":2,
             "label":"no1",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
             "compId":4,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,no2",
+            "props":{"y":434,"x":289,"width":58,"var":"no2","texture":"main/no2.png","height":98},
+            "nodeParent":2,
+            "label":"no2",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":5,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,no3",
+            "props":{"y":434,"x":388,"width":58,"var":"no3","texture":"main/no3.png","height":98},
+            "nodeParent":2,
+            "label":"no3",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":6,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,no4",
+            "props":{"y":571,"x":155,"width":58,"var":"no4","texture":"main/no4.png","height":98},
+            "nodeParent":2,
+            "label":"no4",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":7,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,no5",
+            "props":{"y":571,"x":246,"width":58,"var":"no5","texture":"main/no5.png","height":98},
+            "nodeParent":2,
+            "label":"no5",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":8,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,no6",
+            "props":{"y":571,"x":337,"width":58,"var":"no6","texture":"main/no6.png","height":98},
+            "nodeParent":2,
+            "label":"no6",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":9,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,no7",
+            "props":{"y":571,"x":428,"width":58,"var":"no7","texture":"main/no7.png","height":98},
+            "nodeParent":2,
+            "label":"no7",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":10,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "searchKey":"Button,buttonSignClick",
+            "props":{"y":760,"x":219,"width":202,"var":"buttonSignClick","stateNum":"1","skin":"main/button_signClick.png","height":80},
+            "nodeParent":2,
+            "label":"buttonSignClick",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":11,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "searchKey":"Button,buttonSignClose",
+            "props":{"y":249,"x":496,"width":60,"var":"buttonSignClose","stateNum":"1","skin":"main/button_close.png","height":63},
+            "nodeParent":2,
+            "label":"buttonSignClose",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":12,
             "child":[
                 ]
         }],
