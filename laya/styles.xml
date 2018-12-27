@@ -5,4 +5,6 @@
    <item name="main/progress_bg.png" type="ProgressBar" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
    <item name="main/progress_ing.png" type="ProgressBar" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
    <item name="main/sign_bg.png" type="Sprite" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="main/textinput_son.png" type="TextInput" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="main/textinput_main.png" type="TextInput" compress="0" pack="0" quality="80" props="disabled:true" picType="0" scale="0"/>
 </res>

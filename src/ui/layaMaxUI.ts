@@ -3,6 +3,34 @@ import View=Laya.View;
 import Dialog=Laya.Dialog;
 import Scene=Laya.Scene;
 export module ui.test {
+    export class HomeUI extends View {
+		public buttonRanking:Laya.Button;
+		public inputTopScore:Laya.TextInput;
+		public buttonSign:Laya.Button;
+		public buttonStart:Laya.Button;
+		public inputMoney:Laya.TextInput;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/Home");
+        }
+    }
+    export class signUIUI extends Dialog {
+		public no1:Laya.Sprite;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/signUI");
+        }
+    }
+    export class StartUI extends View {
+		public buttonStart:Laya.Sprite;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/Start");
+        }
+    }
     export class TestSceneUI extends Scene {
 		public progressBox:Laya.Box;
 		public progressIng:Laya.ProgressBar;

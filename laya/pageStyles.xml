@@ -1,3 +1,6 @@
 <page>
    <item name="test/TestScene.scene" props="" ifExport="分离模式" aName=""/>
+   <item name="test/Home.scene" props="" ifExport="分离模式" aName=""/>
+   <item name="test/signUI.scene" props="" ifExport="分离模式" aName=""/>
+   <item name="test/Start.scene" props="" ifExport="分离模式" aName=""/>
 </page>

@@ -1,5 +1,5 @@
 import { ui } from '../ui/layaMaxUI';
-// import indexView from './indexUI';
+import HomeUI from './HomeUI';
 // import StartUI from './StartUI'
 import { BallScript } from "./BallScript";
 import { CarScript } from "./CarScript";
@@ -226,7 +226,7 @@ export default class GameUI extends ui.test.TestSceneUI {
     //素材加载完成回调
     private onloadFinish(){
 
-        this.indexView();
+        this.HomeView();
 
         this.dimianLoad();
         this.bigTaxiLoad();
@@ -246,11 +246,11 @@ export default class GameUI extends ui.test.TestSceneUI {
 
     }
 
-    private indexView() {
-        // var inView: indexView = new indexView();
+    private HomeView() {
+        var inView: HomeUI = new HomeUI();
         // inView.popup(true) 
-        // console.log(indexView)
-        // Laya.stage.addChild(inView);
+        console.log(inView)
+        Laya.stage.addChild(inView);
     }
 
     private buildingAction(lorR, number) {

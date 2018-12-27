@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":640,"runtime":"script/StartUI.ts","height":1136},"compId":2,"child":[{"type":"Sprite","props":{"y":0,"x":0,"texture":"start/start.jpg"},"compId":3},{"type":"Sprite","props":{"y":853,"x":176,"var":"buttonStart","texture":"start/startButton.png"},"compId":4}],"loadList":["start/start.jpg","start/startButton.png"],"loadList3D":[]}
