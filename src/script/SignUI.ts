@@ -1,31 +1,24 @@
-import { ui } from './../ui/layaMaxUI'
+import { ui } from '../ui/layaMaxUI'
+ import alertUI from './alertUI'
 
 export default class HomeUI extends ui.test.signUIUI {
     private alertUI
     constructor() {
         super()
         console.log("signUI加载中")
-        this.alertUI =  new ui.test.alertUI()
+        this.alertUI =  new alertUI()
         this.onAwake = this.awake
     }
-    private awake() {
-          
-            Laya.timer.callLater(this,function(){
-                console.log(this.alertUI.inputAlert)
-                this.alertUI.inputAlert.text = "asdadasdadsa"
-                this.alertUI.popup(false,true)
-            })
-
-       
+    private awake() {    
         Laya.loader.load(["res/atlas/main.atlas",], Laya.Handler.create(this, this.onLoaded));
         this.buttonSignClick.on('click', this, () => {
             this.onLoaded("post")
         })
     }
     private onLoaded(type1) {
-        console.log(type1)
         let poneType = "get"
-        if (type1) {
+        console.log(type1)
+        if (type1 == "post") {
             poneType = type1
         }
         var domain = "https://vetreska.apple.hi.cn/"
@@ -45,6 +38,7 @@ export default class HomeUI extends ui.test.signUIUI {
     private completeHandler(e: any): void {
         console.log(e)
         if (e instanceof Array) {
+            console.log('我加载数据')
             e.forEach((item, index) => {
                 if (item.isRegist) {
                     this[`no${item.day}`].graphics.clear();
@@ -52,6 +46,13 @@ export default class HomeUI extends ui.test.signUIUI {
                     this[`no${item.day}`].loadImage(`main/yes${item.day}.png`);
                 }
             });
+        }else {
+            console.log('亲到请求')
+            Laya.timer.callLater(this,function(){
+                console.log(this.alertUI.inputAlert)
+                this.alertUI.inputAlert.text = e.msg
+                this.alertUI.popup(false,true)
+            })
         }
 
     }

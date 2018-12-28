@@ -3,6 +3,15 @@ import View=Laya.View;
 import Dialog=Laya.Dialog;
 import Scene=Laya.Scene;
 export module ui.test {
+    export class alertUI extends Dialog {
+		public inputAlert:Laya.TextInput;
+		public closeAlert:Laya.Button;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/alert");
+        }
+    }
     export class HomeUI extends View {
 		public buttonRanking:Laya.Button;
 		public buttonSign:Laya.Button;
@@ -12,32 +21,6 @@ export module ui.test {
         createChildren():void {
             super.createChildren();
             this.loadScene("test/Home");
-        }
-    }
-    export class StartUI extends View {
-		public buttonStart:Laya.Sprite;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("test/Start");
-        }
-    }
-    export class TestSceneUI extends Scene {
-		public progressBox:Laya.Box;
-		public progressIng:Laya.ProgressBar;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("test/TestScene");
-        }
-    }
-    export class alertUI extends Dialog {
-		public inputAlert:Laya.TextInput;
-		public closeAlert:Laya.Button;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("test/alert");
         }
     }
     export class signUIUI extends Dialog {
@@ -54,6 +37,23 @@ export module ui.test {
         createChildren():void {
             super.createChildren();
             this.loadScene("test/signUI");
+        }
+    }
+    export class StartUI extends View {
+		public buttonStart:Laya.Sprite;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/Start");
+        }
+    }
+    export class TestSceneUI extends Scene {
+		public boxProgress:Laya.Box;
+		public ProgressBar:Laya.ProgressBar;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/TestScene");
         }
     }
 }

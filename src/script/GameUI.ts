@@ -1,4 +1,4 @@
-import { ui } from '../ui/layaMaxUI';
+import { ui } from './../ui/layaMaxUI';
 import HomeUI from './HomeUI';
 // import StartUI from './StartUI'
 import { BallScript } from "./BallScript";
@@ -77,9 +77,9 @@ export default class GameUI extends ui.test.TestSceneUI {
         Laya.Stat.show();
         //添加3D场景-----------------------
         this.sceneRun = new Laya.Scene3D();
-        Laya.stage.addChild(this.sceneRun);
+        // Laya.stage.addChild(this.sceneRun);
 
-        Laya.URL.basePath = "https://img.apple.hi.cn/";
+        // Laya.URL.basePath = "https://img.apple.hi.cn/";
         Laya.LocalStorage.setItem("score", "0");
         Laya.LocalStorage.setItem("gameover", "no");
 
@@ -217,16 +217,17 @@ export default class GameUI extends ui.test.TestSceneUI {
     private onloadProgress(onloadIng){
         console.log(Math.floor(onloadIng.toFixed(2) * 555))
         let proData = Math.floor(onloadIng.toFixed(2) * 555)
-        this.progressIng.width = proData
+        this.ProgressBar.value = proData
         if(proData == 555){
             console.log("隐藏加载页")
-            this.progressBox.visible = false
+            // this.progressBox.visible = false
+            Laya.stage.addChild(this.sceneRun);
         }
     }
     //素材加载完成回调
     private onloadFinish(){
 
-        this.HomeView();
+        // this.HomeView();
 
         this.dimianLoad();
         this.bigTaxiLoad();
@@ -250,7 +251,7 @@ export default class GameUI extends ui.test.TestSceneUI {
         var inView: HomeUI = new HomeUI();
         // inView.popup(true) 
         console.log(inView)
-        Laya.stage.addChild(inView);
+        // Laya.stage.addChild(inView);
     }
 
     private buildingAction(lorR, number) {
