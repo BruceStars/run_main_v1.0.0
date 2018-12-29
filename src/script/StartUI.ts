@@ -1,10 +1,9 @@
 import { ui } from './../ui/layaMaxUI'
 
-export default class HomeUI extends ui.test.StartUI {
+export default class startUI extends ui.test.StartUI {
     constructor() {
         super()
         this.onAwake = this.awake
-        console.log("homeUI加载中")
         this.login()
     }
 

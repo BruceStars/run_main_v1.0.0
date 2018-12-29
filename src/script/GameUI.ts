@@ -5,6 +5,8 @@ import { BallScript } from "./BallScript";
 import { CarScript } from "./CarScript";
 import { CoinScript } from "./CoinScript";
 import { RocketScript } from "./RocketScript";
+
+import gameoverUI from './gamevoerUI'
 // 方向控制器
 var x = 0;
 var y = 0;
@@ -42,6 +44,7 @@ var rocketState = false;
 var rocketTotal = 0;
 var gameIsOver = false;
 var directionInt = 1;
+
 /**
  * 本示例采用非脚本的方式实现，而使用继承页面基类，实现页面逻辑。在IDE里面设置场景的Runtime属性即可和场景进行关联
  * 相比脚本方式，继承式页面类，可以直接使用页面定义的属性（通过IDE内var属性定义），比如this.tipLbll，this.scoreLbl，具有代码提示效果
@@ -64,6 +67,7 @@ export default class GameUI extends ui.test.TestSceneUI {
     public lamp: Laya.MeshSprite3D;
     public rocket: Laya.MeshSprite3D;
     public rocketing: Laya.MeshSprite3D;
+    private gameover
     constructor() {
         super()
         // Laya.Shader3D.debugMode = true;
@@ -79,7 +83,7 @@ export default class GameUI extends ui.test.TestSceneUI {
         this.sceneRun = new Laya.Scene3D();
         // Laya.stage.addChild(this.sceneRun);
 
-        // Laya.URL.basePath = "https://img.apple.hi.cn/";
+        Laya.URL.basePath = "https://img.apple.hi.cn/";
         Laya.LocalStorage.setItem("score", "0");
         Laya.LocalStorage.setItem("gameover", "no");
 
@@ -156,7 +160,6 @@ export default class GameUI extends ui.test.TestSceneUI {
 
         });
 
-
         var mainArr = [{ url: "res/dimian12/layaScene.lh" },
         { url: "res/bigTaxi3/layaScene.lh" },
         { url: "res/taxi6/layaScene.lh" },
@@ -176,7 +179,7 @@ export default class GameUI extends ui.test.TestSceneUI {
 
 
 
-        Laya.loader.create(mainArr, Laya.Handler.create(this,this.onloadFinish),Laya.Handler.create(this,this.onloadProgress));
+        Laya.loader.create(mainArr, Laya.Handler.create(this, this.onloadFinish), Laya.Handler.create(this, this.onloadProgress));
 
         // Laya.loader.create("res/lajiche/layaScene.lh",Laya.Handler.create(this,function(p){
         //     //实例化加载并创建好的3D对象
@@ -209,25 +212,38 @@ export default class GameUI extends ui.test.TestSceneUI {
         });
 
 
-
+   
 
 
     }
     //进度条显示
-    private onloadProgress(onloadIng){
+    private onloadProgress(onloadIng) {
         console.log(Math.floor(onloadIng.toFixed(2) * 555))
-        let proData = Math.floor(onloadIng.toFixed(2) * 555)
+        let proData = onloadIng
         this.ProgressBar.value = proData
-        if(proData == 555){
+        if (proData == 1) {
             console.log("隐藏加载页")
-            // this.progressBox.visible = false
+            this.boxProgress.visible = false
             Laya.stage.addChild(this.sceneRun);
         }
     }
-    //素材加载完成回调
-    private onloadFinish(){
 
-        // this.HomeView();
+    private gameoverF () {
+        this.gameover = new  gameoverUI()
+    }
+
+    //素材加载完成回调
+    private onloadFinish() {
+
+        this.stage.on('click',this,()=>{
+            console.log("加载得分")
+            this.gameover.popup(false,true)
+        })
+
+
+        this.HomeView();
+
+        this.gameoverF();
 
         this.dimianLoad();
         this.bigTaxiLoad();
@@ -237,7 +253,7 @@ export default class GameUI extends ui.test.TestSceneUI {
         this.icbcLoad();
 
         this.coinLoad();
-        this.dogLoad();
+        // this.dogLoad();
         this.zghLoad();
         this.chinaBankLoad();
         // this.treeLoad();
@@ -251,7 +267,11 @@ export default class GameUI extends ui.test.TestSceneUI {
         var inView: HomeUI = new HomeUI();
         // inView.popup(true) 
         console.log(inView)
-        // Laya.stage.addChild(inView);
+        Laya.timer.callLater(this, () => {
+        Laya.stage.addChild(inView);
+
+        })
+
     }
 
     private buildingAction(lorR, number) {
@@ -598,8 +618,10 @@ export default class GameUI extends ui.test.TestSceneUI {
                         Laya.timer.clear(this, aaa);
                         Laya.timer.pause();
 
+                        //刷新
+                        // Laya.Browser.window.location.reload();
 
-                        Laya.Browser.window.location.reload();
+
                         // this.removeSelf();
                         // var sui = new StartUI();
                         // Laya.stage.addChild(sui);

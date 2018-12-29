@@ -14,6 +14,9 @@ export default class HomeUI extends ui.test.signUIUI {
         this.buttonSignClick.on('click', this, () => {
             this.onLoaded("post")
         })
+        this.buttonSignClose.on('click',this,()=>{
+            this.close()
+        })
     }
     private onLoaded(type1) {
         let poneType = "get"
@@ -52,6 +55,7 @@ export default class HomeUI extends ui.test.signUIUI {
                 console.log(this.alertUI.inputAlert)
                 this.alertUI.inputAlert.text = e.msg
                 this.alertUI.popup(false,true)
+                this.onLoaded()
             })
         }
 

@@ -1,0 +1,1 @@
+{"type":"Dialog","props":{"width":640,"runtime":"script/rankingUI.ts","height":1136},"compId":2,"child":[{"type":"Button","props":{"y":190,"x":475,"width":70,"var":"closeRanking","stateNum":1,"skin":"main/button_close.png","height":73},"compId":3}],"loadList":["main/button_close.png"],"loadList3D":[]}
