@@ -1,4 +1,5 @@
 D .
+R E403046D .DS_Store
 D comp
 P 9401CC40 blank.png
 P B03390E5 btn_close.png
@@ -34,6 +35,7 @@ P 7E990267 vscroll.png
 P E466EB1C vslider$bar.png
 P 2BFF7046 vslider.png
 D main
+R 711FE493 .DS_Store
 P 201DEBAC account_bg.png
 P 2BFB043B burron_again.png
 P CB8C4292 button_close.png
@@ -65,5 +67,6 @@ P BE394E30 yes5.png
 P 22191551 yes6.png
 P 07ECD77B yes7.png
 D start
-R D11E0FEA start.jpg
+R 6D88006A .DS_Store
+P D11E0FEA start.jpg
 P 69AA30DE startButton.png

@@ -7,17 +7,18 @@ export default class gaemoverUI extends ui.test.gameoverUI{
     }
     private awake (){
         console.log('游戏结束')
+        this.setdata()
     }
 
     private setdata() {
-
+        console.log("设置数据")
         var domain = "https://vetreska.apple.hi.cn/"
         var xhr: Laya.HttpRequest = new Laya.HttpRequest();
         xhr.http.timeout = 10000;//设置超时时间；
         xhr.once(Laya.Event.COMPLETE, this, this.completeHandler);
         xhr.once(Laya.Event.ERROR, this, this.errorHandler);
         xhr.on(Laya.Event.PROGRESS, this, this.processHandler);
-        xhr.send(domain + "api/regist/regist", null, 'post', "json", ["Authorization", "b2NhWDE1Vk1OS0xsM0NyamgxNHRHcjFCS0o4OA=="]);
+        xhr.send(domain + "api/coin/coin", "", 'get', "json", ["Authorization", "b2NhWDE1Vk1OS0xsM0NyamgxNHRHcjFCS0o4OA=="]);
     }
 
     
