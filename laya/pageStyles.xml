@@ -6,4 +6,6 @@
    <item name="test/alert.scene" props="" ifExport="分离模式" aName=""/>
    <item name="test/ranking.scene" props="" ifExport="分离模式" aName=""/>
    <item name="test/gameover.scene" props="" ifExport="分离模式" aName=""/>
+   <item name="test/gameingUI.scene" props="" ifExport="分离模式" aName=""/>
+   <item name="test/gameOverGG.scene" props="" ifExport="分离模式" aName=""/>
 </page>

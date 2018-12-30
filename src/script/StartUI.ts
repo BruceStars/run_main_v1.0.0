@@ -5,11 +5,21 @@ export default class startUI extends ui.test.StartUI {
         super()
         this.onAwake = this.awake
         this.login()
+        
+        let back =  Laya.LocalStorage.getItem("back")
+        console.log(back)
+        if(back){
+            console.log(")000000000")
+            Laya.Scene.open("test/TestScene.json");
+            Laya.LocalStorage.removeItem("back")
+        }
+       
     }
 
     private awake() {
         console.log("开始页面加载完成")
-        
+      
+       
     }
 
     private login() {

@@ -20,8 +20,11 @@ export default class HomeUI extends ui.test.HomeUI {
                 key: 'auth',
                 success(res) {
                     console.log("权限验证未")
-                    console.log(res.data)
+               
                     that.authority = res.data
+                    console.log(that.authority)
+                    //检测加载
+                    that.onAwake = that.awake
                 },
                 fail(err) {
                     console.log("没有获取到缓存")
@@ -32,8 +35,7 @@ export default class HomeUI extends ui.test.HomeUI {
             console.log('不是在微信下游戏中无法加载数据')
         }
 
-        //检测加载
-        this.onAwake = this.awake
+        
         //实例化签到
         this.signUI = new signUI()
         //实例化排行版
@@ -42,6 +44,7 @@ export default class HomeUI extends ui.test.HomeUI {
     private awake() {
 
         if(this.authority){
+            console.log("+++++++++")
             this.getData()
         }
 
@@ -61,7 +64,7 @@ export default class HomeUI extends ui.test.HomeUI {
         xhr.once(Laya.Event.COMPLETE, this, this.completeHandler);
         xhr.once(Laya.Event.ERROR, this, this.errorHandler);
         xhr.on(Laya.Event.PROGRESS, this, this.processHandler);
-        xhr.send(domain + "api/coin/coin", "", 'get', "json", ["Authorization", "b2NhWDE1Vk1OS0xsM0NyamgxNHRHcjFCS0o4OA=="]);
+        xhr.send(domain + "api/coin/coin", "", 'get', "json", ["Authorization", this.authority]);
     }
     private processHandler(data: any): void {
         console.log(data);
@@ -71,7 +74,8 @@ export default class HomeUI extends ui.test.HomeUI {
     }
     private completeHandler(e: any): void {
         console.log(e)
+        console.log(e.coin)
         this.inputMoney.text = e.coin
-        this.inputDistance.text =  e.distance
+        this.inputDistance.text = `历史最高记录：` +  e.distance
     }
 }

@@ -76,18 +76,6 @@ wx.getFriendCloudStorage({
         totalGroup.push(userInfon)
       }
     });
-
-    totalGroup.sort ((obj1, obj2) => {
-      let val1 = parseInt (obj1['score']);
-      let val2 = parseInt (obj2['score']);
-      if (val1 < val2) {
-        return -1;
-      } else if (val1 > val2) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
   
     console.log(totalGroup)
 
@@ -114,6 +102,18 @@ function drawRankPanel() {
 
   //起始id
   const startID = perPageMaxNum * page;
+
+  totalGroup.sort ((obj1, obj2) => {
+    let val1 = parseInt (obj1['score']);
+    let val2 = parseInt (obj2['score']);
+    if (val1 < val2) {
+      return -1;
+    } else if (val1 > val2) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
   currentGroup = totalGroup.slice(startID, startID + perPageMaxNum);
   console.log("currentGroup:" + currentGroup)
   //创建头像Bar

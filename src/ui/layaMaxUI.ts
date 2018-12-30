@@ -3,26 +3,6 @@ import View=Laya.View;
 import Dialog=Laya.Dialog;
 import Scene=Laya.Scene;
 export module ui.test {
-    export class alertUI extends Dialog {
-		public inputAlert:Laya.TextInput;
-		public closeAlert:Laya.Button;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("test/alert");
-        }
-    }
-    export class gameoverUI extends Dialog {
-		public inputLength:Laya.TextInput;
-		public onceGameMoney:Laya.TextInput;
-		public onceAagain:Laya.Sprite;
-		public backHome:Laya.Button;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("test/gameover");
-        }
-    }
     export class HomeUI extends View {
 		public buttonRanking:Laya.Button;
 		public buttonSign:Laya.Button;
@@ -33,6 +13,51 @@ export module ui.test {
         createChildren():void {
             super.createChildren();
             this.loadScene("test/Home");
+        }
+    }
+    export class StartUI extends View {
+		public buttonStart:Laya.Sprite;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/Start");
+        }
+    }
+    export class TestSceneUI extends Scene {
+		public boxProgress:Laya.Box;
+		public ProgressBar:Laya.ProgressBar;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/TestScene");
+        }
+    }
+    export class alertUI extends Dialog {
+		public inputAlert:Laya.TextInput;
+		public closeAlert:Laya.Button;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/alert");
+        }
+    }
+    export class gameOverGGUI extends Dialog {
+		public overGetDistance:Laya.TextInput;
+		public overGetMoney:Laya.TextInput;
+		public overBackButton:Laya.Button;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/gameOverGG");
+        }
+    }
+    export class gameingUIUI extends Dialog {
+		public getScore:Laya.TextInput;
+		public getMoney:Laya.TextInput;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("test/gameingUI");
         }
     }
     export class rankingUI extends Dialog {
@@ -57,23 +82,6 @@ export module ui.test {
         createChildren():void {
             super.createChildren();
             this.loadScene("test/signUI");
-        }
-    }
-    export class StartUI extends View {
-		public buttonStart:Laya.Sprite;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("test/Start");
-        }
-    }
-    export class TestSceneUI extends Scene {
-		public boxProgress:Laya.Box;
-		public ProgressBar:Laya.ProgressBar;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("test/TestScene");
         }
     }
 }
